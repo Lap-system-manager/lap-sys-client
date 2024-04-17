@@ -19,7 +19,7 @@ export default function ResearchList() {
 
   const isDashboard = pathname.includes('dashboard');
   return (
-    <Page title="Vận hành">
+    <Page title="Nghiên cứu">
       {isDashboard ? (
         <ResearchMain />
       ) : (
