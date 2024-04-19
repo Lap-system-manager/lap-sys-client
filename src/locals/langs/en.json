@@ -11,6 +11,9 @@
       "Artificial": "Artificial Muscle and Soft Robotics"
     }
   },
+  "news" : {
+    "title": "News"
+  },
   "demo": {
     "title": "English"
   }

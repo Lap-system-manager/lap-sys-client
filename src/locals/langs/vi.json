@@ -10,6 +10,9 @@
       "Artificial": "Cơ bắp nhân tạo và Robot mềm"
     }
   },
+  "news" : {
+    "title": "Tin tức"
+  },
   "demo": {
     "title": "Việt Nam"
   }
