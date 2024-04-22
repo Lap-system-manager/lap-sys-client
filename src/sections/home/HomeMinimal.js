@@ -97,21 +97,19 @@ function HomeMinimal(props) {
       </style>
       <Box sx={{ py: 10, mb: 20 }}>
         <Grid container spacing={2} alignItems="center" justifyContent="center">
-          <Grid item xs={0.5} md={1.57} />
-          <Grid spacing={2} item xs={11} md={8.86}>
+          <Grid item xs={0.5} md={1.8} />
+          <Grid container spacing={2} item xs={11} md={8.4}>
             <Typography variant="h3" gutterBottom sx={{ color: '#3459c1', height: '63px' }}>
               Recent Publication
             </Typography>
 
-            <Grid container spacing={2}>
+            <Grid container spacing={3}>
               <Grid item xs={12} md={7} sx={{ backgroundColor: '#F6F6F7', padding: 5 }}>
-                <Stack sx={{ display: 'block', background: 'red' }}>
+                <Stack sx={{ display: 'block' }}>
                   <Typography variant="subtitle2" sx={{ color: '#878787' }}>
                     {displayedData.number}
                   </Typography>
-                  <Typography variant="body1" item>
-                    {displayedData.name}
-                  </Typography>
+                  <Typography variant="body1">{displayedData.name}</Typography>
                   <Typography variant="subtitle2">{displayedData.content}</Typography>
                   <Box sx={{ display: 'flex' }}>
                     <Link sx={{ color: '#3549c1', fontSize: '90px' }} to="/">
@@ -134,36 +132,45 @@ function HomeMinimal(props) {
                   <Grid item xs={3} md={3.75} />
                 </Grid>
               </Grid>
-              <Grid xs={12} md={5} sx={{ backgroundColor: '#ffff', cursor: 'pointer' }}>
+              <Grid
+                item
+                xs={12}
+                md={5}
+                alignItems="center"
+                justifyContent="center"
+                sx={{ backgroundColor: '#ffff', cursor: 'pointer' }}
+              >
                 <Grid container spacing={0} sx={{ flexDirection: { xs: 'row', sm: 'row', md: 'column' } }}>
                   {data.map((item, index) => (
                     <Grid
-                      spacing={2}
-                      z
+                      container
+                      spacing={3}
                       item
                       xs={12}
                       md={12}
                       key={index}
                       sx={{
                         backgroundColor: hoveredIndex === index ? '#85ffd8' : '#ffff',
-                        padding: 1,
+                        padding: 3,
                         transition: 'background-color 0.3s ease',
                       }}
                       onMouseEnter={() => setHoveredIndex(index)}
                       onMouseLeave={() => setHoveredIndex(null)}
                     >
                       <Box onClick={() => handleBoxClick(index)}>
-                        <Typography variant="subtitle2" sx={{ color: '#878787' }}>
+                        <Typography variant="subtitle2" sx={{ color: '#878787', paddingLeft: '5px' }}>
                           {item.number}
                         </Typography>
-                        <Typography variant="subtitle2">{item.content}</Typography>
+                        <Typography variant="subtitle2" sx={{ paddingLeft: '5px' }}>
+                          {item.content}
+                        </Typography>
                         <Stack>
                           <Link sx={{ color: '#3549c1' }} to="/">
-                            <Typography variant="subtitle2" sx={{ paddingLeft: '4px' }}>
+                            <Typography variant="subtitle2" sx={{ paddingLeft: '5px' }}>
                               {item.link}
                             </Typography>
                           </Link>
-                          <Typography variant="subtitle2" sx={{ paddingLeft: '4px' }}>
+                          <Typography variant="subtitle2" sx={{ paddingLeft: '5px' }}>
                             {item.if}
                           </Typography>
                         </Stack>
@@ -174,7 +181,7 @@ function HomeMinimal(props) {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={0.5} md={1.57} />
+          <Grid item xs={0.5} md={1.8} />
         </Grid>
       </Box>
     </Box>
