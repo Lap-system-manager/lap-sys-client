@@ -19,7 +19,7 @@ const RootStyle = styled('div')(({ theme, isDashboard, isStudent }) => ({
   borderRadius: Number(theme.shape.borderRadius) * 2,
   [theme.breakpoints.up('md')]: {
     // eslint-disable-next-line no-nested-ternary
-    padding: isDashboard ? theme.spacing(5) : isStudent ? theme.spacing(15, 9.5) : theme.spacing(0, 7),
+    padding: isDashboard ? theme.spacing(5) : isStudent ? theme.spacing(15, 9.5) : theme.spacing(0, 5),
   },
 }));
 

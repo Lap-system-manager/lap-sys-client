@@ -29,7 +29,7 @@ const RootStyle = styled('div')(({ theme, isDashboard }) => ({
   padding: isDashboard ? theme.spacing(0) : theme.spacing(2, 0),
   borderRadius: Number(theme.shape.borderRadius) * 2,
   [theme.breakpoints.up('md')]: {
-    padding: isDashboard ? theme.spacing(0) : theme.spacing(5, 2),
+    padding: isDashboard ? theme.spacing(0) : theme.spacing(5, 5),
   },
 }));
 
