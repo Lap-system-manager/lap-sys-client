@@ -12,7 +12,8 @@ import useResponsive from '../../hooks/useResponsive';
 import Markdown from '../../components/Markdown';
 import { Language } from '../../constant';
 import useLocales from '../../locals/useLocals';
-import { PATH_DASHBOARD } from '../../routes/paths';
+import { PATH_DASHBOARD, PATH_PAGE } from '../../routes/paths';
+import HeaderBreadcrumbs from '../../components/HeaderBreadcrumbs';
 
 // ----------------------------------------------------------------------
 const RootStyle = styled('div')(({ theme, isDashboard, isStudent }) => ({
@@ -73,6 +74,39 @@ export default function Professor({ idProfessor }) {
         </Grid>
       ) : (
         <></>
+      )}
+      {!isStudent ? (
+        <></>
+      ) : (
+        <>
+          {isMobile ? (
+            <Grid item xs={12} sx={{ justifyContent: 'center', alignItems: 'center', display: 'flex', pb: 3 }}>
+              <Typography variant="h4"> {t('people.tab2')}</Typography>
+            </Grid>
+          ) : (
+            <Grid item xs={12}>
+              <Stack direction="row" justifyContent="space-between">
+                <Typography variant="h4">{t('people.tab2')}</Typography>
+                {isDashboard ? (
+                  <></>
+                ) : (
+                  <HeaderBreadcrumbs
+                    links={[
+                      { name: t('profile.Home'), href: '/' },
+                      {
+                        name: t('people.tab2'),
+                        href: PATH_PAGE.profile.list,
+                      },
+                      {
+                        name: userDetail?.fullName,
+                      },
+                    ]}
+                  />
+                )}
+              </Stack>
+            </Grid>
+          )}
+        </>
       )}
       <Box>
         <Grid container spacing={2}>

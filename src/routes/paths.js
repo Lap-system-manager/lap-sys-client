@@ -55,7 +55,7 @@ export const PATH_PAGE = {
   },
 
   profile: {
-    list: 'profile',
+    list: '/profile',
     detail: (id) => `${id}/detail`,
   },
 
